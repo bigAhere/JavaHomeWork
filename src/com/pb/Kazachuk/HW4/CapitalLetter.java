@@ -6,14 +6,14 @@ public class CapitalLetter {
 
     public static void main(String[] arg) {
 
-        String x;
+        String z;
         Scanner in = new Scanner(System.in);
         System.out.print("Input your phrase: ");
-        x = in.nextLine();
+        z = in.nextLine();
 
-        System.out.println("First variant " + toUp(x));
+        System.out.println("First variant " + toUp(z));
 
-        toUpSecond(x);
+        toUpSecond(z);
     }
 
     public static StringBuilder toUp(String x) {
@@ -30,13 +30,13 @@ public class CapitalLetter {
     }
 
     public static void toUpSecond(String x) {
-        String output = "";
-        String[] words = x.split(" ", 100);
+        StringBuilder output = new StringBuilder();
+        String[] words = x.split(" ");
 
         for (String word:words) {
             String first = word.substring(0, 1).toUpperCase();
             String all = word.substring(1);
-            output += (first + all + " ");
+            output.append(first).append(all).append(" ");
         }
 
         System.out.print("Second variant " + output);
